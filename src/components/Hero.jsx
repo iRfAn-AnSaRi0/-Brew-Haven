@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Coffee,
-  Sparkles,
-  MapPin,
-  ArrowDown,
-  Bean,
-} from "lucide-react";
+import { Coffee, Sparkles, MapPin, ArrowDown, Bean } from "lucide-react";
 
 const Hero = () => {
   const [hideScroll, setHideScroll] = useState(false);
@@ -89,15 +83,23 @@ const Hero = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="absolute top-24 left-1/2 -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 px-6 py-2 rounded-full text-white flex items-center gap-2 shadow-lg text-sm"
+        className="
+    absolute top-24 left-1/2 -translate-x-1/2
+    backdrop-blur-md bg-white/10 border border-white/20
+    px-4 sm:px-6 py-2 rounded-full text-white
+    flex items-center gap-2 shadow-lg
+    text-xs sm:text-sm
+    max-w-[95vw] sm:max-w-md
+    overflow-hidden
+    truncate
+  "
       >
-        <MapPin size={16} />
-        Since 2022 • Premium Café Experience
+        <MapPin size={16} className="flex-shrink-0" />
+        <span className="truncate">Since 2022 • Premium Café Experience</span>
       </motion.div>
 
       {/* ===== MAIN CONTENT ===== */}
       <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
-
         <motion.div
           animate={{ y: [0, -10, 0], opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 4, repeat: Infinity }}
@@ -158,8 +160,8 @@ const Hero = () => {
           transition={{ delay: 1.1, duration: 1 }}
           className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto"
         >
-          Experience artisan brews, elegant interiors, and unforgettable
-          flavors in every sip.
+          Experience artisan brews, elegant interiors, and unforgettable flavors
+          in every sip.
         </motion.p>
 
         <motion.div
